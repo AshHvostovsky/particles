@@ -34,7 +34,11 @@ namespace particles
 
     public class ColorPoint : IImpactPoint
     {
+        public int Power = 100; // сила притяжения
+        public Color FromColor;
+        public Color ToColor;
 
+        // а сюда по сути скопировали с минимальными правками то что было в UpdateState
         public override void ImpactParticle(Particle particle)
         {
             float gX = X - particle.X;
@@ -43,17 +47,16 @@ namespace particles
             double r = Math.Sqrt(gX * gX + gY * gY); // считаем расстояние от центра точки до центра частицы
             if (r + particle.Radius < Power / 2) // если частица оказалось внутри окружности
             {
-                // то притягиваем ее
-                float r2 = (float)Math.Max(100, gX * gX + gY * gY);
-                particle.SpeedX += gX * Power / r2;
-                particle.SpeedY += gY * Power / r2;
+                particle.FromColor = FromColor;
+                particle.ToColor = ToColor;
+
             }
         }
         public override void Render(Graphics g)
         {
             // буду рисовать окружность с диаметром равным Power
             g.DrawEllipse(
-                   new Pen(Color.Red),
+                   new Pen(FromColor),
                    X - Power / 2,
                    Y - Power / 2,
                    Power,

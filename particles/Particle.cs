@@ -27,6 +27,11 @@ namespace particles
         // добавили генератор случайных чисел
         public static Random rand = new Random();
 
+        // два новых поля под цвет начальный и конечный
+        public Color FromColor;
+        public Color ToColor;
+
+
         // конструктор по умолчанию будет создавать кастомную частицу
         public Particle()
         {
@@ -65,9 +70,7 @@ namespace particles
     // новый класс для цветных частиц
     public class ParticleColorful : Particle
     {
-        // два новых поля под цвет начальный и конечный
-        public Color FromColor;
-        public Color ToColor;
+        
 
         // для смеси цветов
         public static Color MixColor(Color color1, Color color2, float k)

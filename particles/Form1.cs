@@ -12,10 +12,18 @@ namespace particles
 {
     public partial class Form1 : Form
     {
+        Random random = new Random();
+
         List<Particle> particlesList = new List<Particle>();
 
         List<Emitter> emitters = new List<Emitter>();
         Emitter emitter; // добавим поле для эмиттера
+
+
+        ColorPoint point1; // добавил поле под первую точку
+        ColorPoint point2; // добавил поле под вторую точку
+        ColorPoint point3; // добавил поле под третью точку
+
         public Form1()
         {
             InitializeComponent();
@@ -27,8 +35,8 @@ namespace particles
                 Spreading = 30,
                 SpeedMin = 6,
                 SpeedMax = 15,
-                ColorFrom = Color.Gold,
-                ColorTo = Color.FromArgb(200, Color.Red),
+                ColorFrom = Color.White,
+                ColorTo = Color.FromArgb(0, Color.Black),
                 ParticlesPerTick = 10,
                 X = picDisplay.Width/2,
                 Y = picDisplay.Height,
@@ -37,22 +45,35 @@ namespace particles
             emitters.Add(this.emitter); // все равно добавляю в список emitters, чтобы он рендерился и обновлялся
         
 
-        // гравитон
-        
-        emitter.impactPoints.Add(new GravityPoint
-        {
-            X = (float)(picDisplay.Width * 0.25),
-            Y = picDisplay.Height / 2
-        });
+     
 
+            // привязываем гравитоны к полям
+            point1 = new ColorPoint
+            {
+                X = (float)(picDisplay.Width * 0.25),
+                Y = picDisplay.Height / 2,
+                ToColor = Color.Black,
+                FromColor = Color.Red,
+            };
+            point2 = new ColorPoint
+            {
+                X = picDisplay.Width / 2 - 100,
+                Y = picDisplay.Height / 2,
+                ToColor = Color.Black,
+                FromColor = Color.Blue,
+            };
+            point3 = new ColorPoint
+            {
+                X = (float)(picDisplay.Width * 0.75),
+                Y = picDisplay.Height / 2,
+                ToColor = Color.Black,
+                FromColor = Color.Green,
+            };
 
-
-        // снова гравитон
-        emitter.impactPoints.Add(new GravityPoint
-        {
-            X = (float)(picDisplay.Width * 0.75),
-            Y = picDisplay.Height / 2
-        });
+            // привязываем поля к эмиттеру
+            emitter.impactPoints.Add(point1);
+            emitter.impactPoints.Add(point2);
+            emitter.impactPoints.Add(point3);
 
         }
 
@@ -82,7 +103,59 @@ namespace particles
 
         private void x1_Scroll(object sender, EventArgs e)
         {
-            emitter.Direction = x1.Value; // направлению эмиттера присваиваем значение ползунка
+            point1.X = x1.Value; 
+        }
+
+        private void y1_Scroll(object sender, EventArgs e)
+        {
+            point1.Y = y1.Value; 
+        }
+
+        private void s1_Scroll(object sender, EventArgs e)
+        {
+            point1.Power = s1.Value;
+        }
+
+        private void x2_Scroll(object sender, EventArgs e)
+        {
+            point2.X = x2.Value;
+        }
+
+        private void y2_Scroll(object sender, EventArgs e)
+        {
+            point2.Y = y2.Value;
+        }
+
+        private void s2_Scroll(object sender, EventArgs e)
+        {
+            point2.Power = s2.Value;
+        }
+
+        private void x3_Scroll(object sender, EventArgs e)
+        {
+            point3.X = x3.Value;
+        }
+
+        private void y3_Scroll(object sender, EventArgs e)
+        {
+            point3.Y = y3.Value;
+        }
+
+        private void s3_Scroll(object sender, EventArgs e)
+        {
+            point3.Power = s3.Value;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            point1.FromColor = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
+            point2.FromColor = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
+            point3.FromColor = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            emitter.Spreading = trackBar1.Value;
         }
     }
 }

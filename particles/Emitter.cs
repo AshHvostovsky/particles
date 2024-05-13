@@ -10,7 +10,7 @@ namespace particles
 
     public class Emitter
     {
-        public int ParticlesCount = 500;
+        public int ParticlesCount = 1000;
 
 
         public int X; // координата X центра эмиттера, будем ее использовать вместо MousePositionX
@@ -21,8 +21,8 @@ namespace particles
         public int SpeedMax = 10; // начальная максимальная скорость движения частицы
         public int RadiusMin = 2; // минимальный радиус частицы
         public int RadiusMax = 10; // максимальный радиус частицы
-        public int LifeMin = 20; // минимальное время жизни частицы
-        public int LifeMax = 100; // максимальное время жизни частицы
+        public int LifeMin = 100; // минимальное время жизни частицы
+        public int LifeMax = 200; // максимальное время жизни частицы
 
         public Boolean directionBool = false;
 
@@ -52,7 +52,7 @@ namespace particles
             return particle;
         }
 
-        /*
+        
         public void UpdateState()
         {
             int particlesToCreate = ParticlesPerTick; // фиксируем счетчик сколько частиц нам создавать за тик
@@ -94,50 +94,70 @@ namespace particles
                     break; // а если частиц уже 500 штук, то ничего не генерирую
                 }
             }
-        }*/
+            if (Direction < 45)
+            {
+                directionBool = true;
+            }
+            else if (Direction > 135)
+            {
+                directionBool = false;
+            }
+
+
+            if (!directionBool)
+            {
+                Direction--;
+            }
+            else
+            {
+                Direction++;
+            }
+        }
 
 
 
 
 
 
-
-
+        
+        /*
         public void UpdateState()
         {
             int particlesToCreate = ParticlesPerTick; // фиксируем счетчик сколько частиц нам создавать за тик
 
             foreach (var particle in particlesList)
             {
- 
-                if (particle.Life <= 0) // если частицы умерла
-                {
-                    /* 
-                     * то проверяем надо ли создать частицу
-                     */
+                particle.Life -= 1;
+
+                if (particle.Life <= 0)
+                { 
+                   
                     if (particlesToCreate > 0)
                     {
-                        /* у нас как сброс частицы равносилен созданию частицы */
+                        
                         particlesToCreate -= 1; // поэтому уменьшаем счётчик созданных частиц на 1
                         ResetParticle(particle);
                     }
                 }
                 else
                 {
-                    // каждая точка по-своему воздействует на вектор скорости
+
+              
+                    particle.X += particle.SpeedX;
+                    particle.Y += particle.SpeedY;
+
+                    particle.Life -= 1;
                     foreach (var point in impactPoints)
                     {
                         point.ImpactParticle(particle);
                     }
 
-                    // а это старый код, его не трогаем
                     particle.SpeedX += GravitationX;
                     particle.SpeedY += GravitationY;
 
-                    particle.X += particle.SpeedX;
-                    particle.Y += particle.SpeedY;
 
-                    
+
+
                 }
             }
 
@@ -171,7 +191,7 @@ namespace particles
             }
 
 
-        }
+        }*/
 
 
         public void Render(Graphics g)
@@ -216,6 +236,10 @@ namespace particles
             particle.SpeedY = -(float)(Math.Sin(direction / 180 * Math.PI) * speed);
 
             particle.Radius = Particle.rand.Next(RadiusMin, RadiusMax);
+
+            particle.FromColor = Color.White;
+            particle.ToColor = Color.FromArgb(0, Color.Black);
+
         }
 
 
