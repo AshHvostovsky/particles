@@ -101,7 +101,7 @@ namespace particles
     }
     public class AntiGravityPoint : IImpactPoint
     {
-        public int Power = 100; // сила отторжения
+        public int Power = 50; // сила отторжения
 
         // а сюда по сути скопировали с минимальными правками то что было в UpdateState
         public override void ImpactParticle(Particle particle)
@@ -112,6 +112,17 @@ namespace particles
 
             particle.SpeedX -= gX * Power / r2; // тут минусики вместо плюсов
             particle.SpeedY -= gY * Power / r2; // и тут
+        }
+        public override void Render(Graphics g)
+        {
+            // буду рисовать окружность с диаметром равным Power
+            g.DrawEllipse(
+                   new Pen(Color. White),
+                   X - Power / 2,
+                   Y - Power / 2,
+                   Power,
+                   Power
+               );
         }
     }
 }

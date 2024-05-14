@@ -23,6 +23,7 @@ namespace particles
         ColorPoint point1; // добавил поле под первую точку
         ColorPoint point2; // добавил поле под вторую точку
         ColorPoint point3; // добавил поле под третью точку
+        AntiGravityPoint point4; // добавил поле под четвертую точку
 
         public Form1()
         {
@@ -70,10 +71,17 @@ namespace particles
                 FromColor = Color.Green,
             };
 
+            point4 = new AntiGravityPoint
+            {
+                X = 10,
+                Y = 10,
+            };
+
             // привязываем поля к эмиттеру
             emitter.impactPoints.Add(point1);
             emitter.impactPoints.Add(point2);
             emitter.impactPoints.Add(point3);
+            emitter.impactPoints.Add(point4);
 
         }
 
@@ -99,6 +107,10 @@ namespace particles
             // а тут в эмиттер передаем положение мыфки
             emitter.MousePositionX = e.X;
             emitter.MousePositionY = e.Y;
+
+            // а тут передаем положение мыши, в положение гравитона
+            point4.X = e.X;
+            point4.Y = e.Y;
         }
 
         private void x1_Scroll(object sender, EventArgs e)
@@ -161,6 +173,30 @@ namespace particles
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
             emitter.RadiusMax = trackBar2.Value;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                point4.Power = 50;
+            }
+            else
+            {
+                point4.Power = 0;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                emitter.GravitationY = 0.1f;
+            }
+            else
+            {
+                emitter.GravitationY = 0.0f;
+            }
         }
     }
 }
