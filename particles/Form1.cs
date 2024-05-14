@@ -157,5 +157,10 @@ namespace particles
         {
             emitter.Spreading = trackBar1.Value;
         }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            emitter.RadiusMax = trackBar2.Value;
+        }
     }
 }

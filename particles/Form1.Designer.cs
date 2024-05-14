@@ -55,6 +55,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label7 = new System.Windows.Forms.Label();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.x1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.y1)).BeginInit();
@@ -66,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.y3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.s3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.SuspendLayout();
             // 
             // picDisplay
@@ -305,7 +308,7 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(1118, 590);
+            this.trackBar1.Location = new System.Drawing.Point(1118, 580);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Minimum = 5;
             this.trackBar1.Name = "trackBar1";
@@ -318,11 +321,32 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(1166, 574);
+            this.label7.Location = new System.Drawing.Point(1166, 565);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 13);
             this.label7.TabIndex = 25;
             this.label7.Text = "Рассеянность потока";
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(1118, 631);
+            this.trackBar2.Maximum = 50;
+            this.trackBar2.Minimum = 1;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(205, 45);
+            this.trackBar2.TabIndex = 26;
+            this.trackBar2.Value = 1;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label14.Location = new System.Drawing.Point(1169, 612);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(83, 13);
+            this.label14.TabIndex = 27;
+            this.label14.Text = "Размер частиц";
             // 
             // Form1
             // 
@@ -330,6 +354,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1335, 666);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.trackBar2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.button1);
@@ -368,6 +394,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.y3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.s3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,6 +428,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.Label label14;
     }
 }
 

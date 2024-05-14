@@ -13,14 +13,15 @@ namespace particles
         public int ParticlesCount = 1000;
 
 
+
         public int X; // координата X центра эмиттера, будем ее использовать вместо MousePositionX
         public int Y; // соответствующая координата Y 
         public int Direction = 0; // вектор направления в градусах куда сыпет эмиттер
         public int Spreading = 360; // разброс частиц относительно Direction
         public int SpeedMin = 1; // начальная минимальная скорость движения частицы
         public int SpeedMax = 10; // начальная максимальная скорость движения частицы
-        public int RadiusMin = 2; // минимальный радиус частицы
-        public int RadiusMax = 10; // максимальный радиус частицы
+        public int RadiusMin = 1; // минимальный радиус частицы
+        public int RadiusMax = 5; // максимальный радиус частицы
         public int LifeMin = 100; // минимальное время жизни частицы
         public int LifeMax = 200; // максимальное время жизни частицы
 
