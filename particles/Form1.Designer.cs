@@ -97,6 +97,7 @@
             this.x1.Name = "x1";
             this.x1.Size = new System.Drawing.Size(205, 45);
             this.x1.TabIndex = 1;
+            this.x1.Value = 260;
             this.x1.Scroll += new System.EventHandler(this.x1_Scroll);
             // 
             // y1
@@ -106,6 +107,7 @@
             this.y1.Name = "y1";
             this.y1.Size = new System.Drawing.Size(205, 45);
             this.y1.TabIndex = 2;
+            this.y1.Value = 321;
             this.y1.Scroll += new System.EventHandler(this.y1_Scroll);
             // 
             // x2
@@ -115,6 +117,7 @@
             this.x2.Name = "x2";
             this.x2.Size = new System.Drawing.Size(205, 45);
             this.x2.TabIndex = 3;
+            this.x2.Value = 420;
             this.x2.Scroll += new System.EventHandler(this.x2_Scroll);
             // 
             // y2
@@ -124,28 +127,29 @@
             this.y2.Name = "y2";
             this.y2.Size = new System.Drawing.Size(205, 45);
             this.y2.TabIndex = 4;
+            this.y2.Value = 321;
             this.y2.Scroll += new System.EventHandler(this.y2_Scroll);
             // 
             // s1
             // 
             this.s1.Location = new System.Drawing.Point(1118, 135);
-            this.s1.Maximum = 300;
+            this.s1.Maximum = 600;
             this.s1.Minimum = 4;
             this.s1.Name = "s1";
             this.s1.Size = new System.Drawing.Size(205, 45);
             this.s1.TabIndex = 5;
-            this.s1.Value = 4;
+            this.s1.Value = 100;
             this.s1.Scroll += new System.EventHandler(this.s1_Scroll);
             // 
             // s2
             // 
             this.s2.Location = new System.Drawing.Point(1118, 301);
-            this.s2.Maximum = 300;
+            this.s2.Maximum = 600;
             this.s2.Minimum = 4;
             this.s2.Name = "s2";
             this.s2.Size = new System.Drawing.Size(205, 45);
             this.s2.TabIndex = 6;
-            this.s2.Value = 4;
+            this.s2.Value = 100;
             this.s2.Scroll += new System.EventHandler(this.s2_Scroll);
             // 
             // x3
@@ -155,6 +159,7 @@
             this.x3.Name = "x3";
             this.x3.Size = new System.Drawing.Size(205, 45);
             this.x3.TabIndex = 7;
+            this.x3.Value = 781;
             this.x3.Scroll += new System.EventHandler(this.x3_Scroll);
             // 
             // label1
@@ -194,17 +199,18 @@
             this.y3.Name = "y3";
             this.y3.Size = new System.Drawing.Size(205, 45);
             this.y3.TabIndex = 11;
+            this.y3.Value = 321;
             this.y3.Scroll += new System.EventHandler(this.y3_Scroll);
             // 
             // s3
             // 
             this.s3.Location = new System.Drawing.Point(1118, 477);
-            this.s3.Maximum = 300;
+            this.s3.Maximum = 600;
             this.s3.Minimum = 4;
             this.s3.Name = "s3";
             this.s3.Size = new System.Drawing.Size(205, 45);
             this.s3.TabIndex = 12;
-            this.s3.Value = 4;
+            this.s3.Value = 100;
             this.s3.Scroll += new System.EventHandler(this.s3_Scroll);
             // 
             // label4
@@ -316,7 +322,7 @@
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(205, 45);
             this.trackBar1.TabIndex = 24;
-            this.trackBar1.Value = 5;
+            this.trackBar1.Value = 30;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // label7
@@ -337,7 +343,7 @@
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(205, 45);
             this.trackBar2.TabIndex = 26;
-            this.trackBar2.Value = 1;
+            this.trackBar2.Value = 5;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
             // label14

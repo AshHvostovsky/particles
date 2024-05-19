@@ -14,11 +14,7 @@ namespace particles
     {
         Random random = new Random();
 
-        List<Particle> particlesList = new List<Particle>();
-
-        List<Emitter> emitters = new List<Emitter>();
-        Emitter emitter; // добавим поле для эмиттера
-
+        Emitter emitter; 
 
         ColorPoint point1; // добавил поле под первую точку
         ColorPoint point2; // добавил поле под вторую точку
@@ -43,12 +39,11 @@ namespace particles
                 Y = picDisplay.Height,
             };
 
-            emitters.Add(this.emitter); // все равно добавляю в список emitters, чтобы он рендерился и обновлялся
         
 
      
 
-            // привязываем гравитоны к полям
+            // привязываем цветные области к полям
             point1 = new ColorPoint
             {
                 X = (float)(picDisplay.Width * 0.25),
@@ -71,6 +66,7 @@ namespace particles
                 FromColor = Color.Green,
             };
 
+            // антигравитрон
             point4 = new AntiGravityPoint
             {
                 X = 10,
@@ -104,7 +100,7 @@ namespace particles
 
         private void picDisplay_MouseMove(object sender, MouseEventArgs e)
         {
-            // а тут в эмиттер передаем положение мыфки
+            // а тут в эмиттер передаем положение мышки
             emitter.MousePositionX = e.X;
             emitter.MousePositionY = e.Y;
 
@@ -125,7 +121,7 @@ namespace particles
 
         private void s1_Scroll(object sender, EventArgs e)
         {
-            point1.Power = s1.Value;
+            point1.RadArea = s1.Value;
         }
 
         private void x2_Scroll(object sender, EventArgs e)
@@ -140,7 +136,7 @@ namespace particles
 
         private void s2_Scroll(object sender, EventArgs e)
         {
-            point2.Power = s2.Value;
+            point2.RadArea = s2.Value;
         }
 
         private void x3_Scroll(object sender, EventArgs e)
@@ -155,7 +151,7 @@ namespace particles
 
         private void s3_Scroll(object sender, EventArgs e)
         {
-            point3.Power = s3.Value;
+            point3.RadArea = s3.Value;
         }
 
         private void button1_Click(object sender, EventArgs e)

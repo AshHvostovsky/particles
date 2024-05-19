@@ -1,0 +1,10 @@
+C:\Users\hvostovsky\source\repos\particles\particles\bin\Debug\particles.exe.config
+C:\Users\hvostovsky\source\repos\particles\particles\bin\Debug\particles.exe
+C:\Users\hvostovsky\source\repos\particles\particles\bin\Debug\particles.pdb
+C:\Users\hvostovsky\source\repos\particles\particles\obj\Debug\particles.csproj.AssemblyReference.cache
+C:\Users\hvostovsky\source\repos\particles\particles\obj\Debug\particles.Form1.resources
+C:\Users\hvostovsky\source\repos\particles\particles\obj\Debug\particles.Properties.Resources.resources
+C:\Users\hvostovsky\source\repos\particles\particles\obj\Debug\particles.csproj.GenerateResource.cache
+C:\Users\hvostovsky\source\repos\particles\particles\obj\Debug\particles.csproj.CoreCompileInputs.cache
+C:\Users\hvostovsky\source\repos\particles\particles\obj\Debug\particles.exe
+C:\Users\hvostovsky\source\repos\particles\particles\obj\Debug\particles.pdb
